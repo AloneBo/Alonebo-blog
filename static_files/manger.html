@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--markdown css-->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/fonts/iconfont.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="css/manger.css">
+</head>
+<body>
+<header>
+    <div class="header w">
+        <h1><a href="/index.html">AloneBo's blog</a></h1>
+        <p><em class="iconfont icon-heart" id="j_header_heart"></em>SOMEONE KNOCK AT THE DOOR!</p>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <span></span>
+
+                <li><a href="/about.html">About</a></li>
+                <span></span>
+                <li style="width: 80px;"><a href="" class="header_nav_current">博客管理</a></li>
+            </ul>
+        </nav>
+
+        <div class="user_area">
+            <i class="iconfont icon-xiaoxi"></i>
+            <em></em>
+            <span id="j_user_name">AloneBo</span>
+            <img src="/images/user_logo.jpeg" alt="" title="AloneBo">
+        </div>
+
+        <div class="user_menu_pop">
+            <span>三角</span>
+            <ul>
+                 <li><a href="/manger.html"><em class="iconfont icon-combinedshapecopy2"></em>管理博客</a>
+                </li>
+                <li><a href="/write.html"><em class="iconfont icon-dashang"></em>写新文章</a></li>
+                <li><a href="login.html" id="j_login"><em class="iconfont icon-logout"></em>退出登陆</a></li>
+            </ul>
+
+        </div>
+    </div>
+</header>
+
+
+<div class="content w clearfix">
+    <section class="manger">
+        <!--replace me-->
+
+    </section>
+
+
+    <aside class="manger_nav">
+        <ul>
+            <li class="manger_title"><span>文章管理</span></li>
+            <li><a href="/manger.html#view=modify_article">删改文章</a></li>
+            <li><a href="/manger.html#view=manger_category">文章分类</a></li>
+            <li class="manger_title"><span>账户管理</span></li>
+            <li><a href="/manger.html#view=modify_password">更改密码</a></li>
+            <li><a href="/manger.html#view=modify_avatar">更改头像</a></li>
+            <li class="manger_title"><span>其它更改</span></li>
+            <li><a href="/manger.html#view=modify_title">更改标语</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    <div class="copyright w">
+        <p class="p1"><span class="iconfont icon-heart"></span> Developed by AloneBo</p>
+        <p class="p2">Powered by Tornado</p>
+        <a>
+            <span class="iconfont icon-CN_jianshu jianshu"></span>
+        </a>
+        <a href="https://github.com/AloneBo">
+            <span class="iconfont icon-GitHub github"></span>
+        </a>
+        <a href="http://www.miitbeian.gov.cn/" style="text-align: center; display: block;">粤ICP备18123808号</a>
+    </div>
+</footer>
+
+
+<script id="modify_article" type="text/art-template">
+    {{if data}}
+    <table class="table table-hover table-condensed modify_manger">
+        <caption style="font-size: 24px; color: #0f0f0f">文章修改</caption>
+        <thead>
+        <tr>
+            <th>数据库id</th>
+            <th class="text-center">标题</th>
+            <th class="text-right " style="padding-right: 40px">动作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for(var i = 0; i < data.length; i++) {%>
+        <tr>
+            <th scope="row" style="vertical-align: middle">{{data[i].id}}</th>
+            <td class="text-center" style="vertical-align: middle; font-size: 14px">{{data[i].title}}</td>
+            <td>
+                <button class="btn btn-danger btn-sm pull-right" style="margin-left: 5px">删除</button>
+                <button class="btn btn-success btn-sm pull-right">更改</button>
+            </td>
+        </tr>
+        <%}%>
+
+        </tbody>
+    </table>
+    {{/if}}
+</script>
+
+
+<script id="manger_category" type="text/art-template">
+    {{if data}}
+    <table class="table table-hover table-condensed manger_category">
+        <caption style="font-size: 24px; color: #0f0f0f">分类修改</caption>
+        <thead>
+        <tr>
+            <th>数据库id</th>
+            <th>索引文章数目</th>
+            <th class="text-center">分类名称</th>
+            <th class="text-right " style="padding-right: 40px">动作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for(var i = 0; i < data.length; i++) {%>
+        <tr>
+            <th scope="row" style="vertical-align: middle">{{data[i].category_id}}</th>
+            <th scope="" style="vertical-align: middle">{{data[i].category_count}}</th>
+            <td class="text-center" style="vertical-align: middle; font-size: 14px">{{data[i].category_title}}</td>
+            <td>
+                <button class="btn btn-danger btn-sm pull-right" style="margin-left: 5px">删除</button>
+                <!--<button class="btn btn-success btn-sm pull-right">更改</button>-->
+            </td>
+        </tr>
+        <%}%>
+
+        </tbody>
+    </table>
+    {{/if}}
+</script>
+
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/bootstrap.min.js"></script>
+<script src="/lib/arttemplate/template-web.js"></script>
+<script src="/js/manger.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>生词表</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <style>
+        table {
+            border: 1px solid #ccc;
+        }
+
+        table#customers {
+            font-size: 16px;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        #customers th {
+            padding-top: 11px;
+            padding-bottom: 11px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="w content">
+    <h2 style="text-align: center; margin: 10px">WORD LIST</h2>
+    <table id="customers">
+        <tbody>
+        <tr>
+            <th>英文</th>
+            <th>中文</th>
+            <th>发音</th>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+<script id="test" type="text/art-template">
+    {{if data}}
+    {{each data item index}}
+        <tr class="alt">
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+        </tr>
+    {{/each}}
+    {{/if}}
+</script>
+
+<script src="/lib/arttemplate/template-web.js"></script>
+<script src="lib/jquery/jquery-2.2.4.js"></script>
+<script src="/js/englishnote.js"></script>
+</body>
+</html>

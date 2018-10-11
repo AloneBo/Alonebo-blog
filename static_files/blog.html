@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>blog</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/lib/markdown/css/editormd.min.css"/>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/fonts/iconfont.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/blog.css">
+
+</head>
+<body>
+<header>
+    <div class="header w">
+        <h1><a href="/index.html">AloneBo's blog</a></h1>
+        <p><em class="iconfont icon-heart" id="j_header_heart"></em>SOMEONE KNOCK AT THE DOOR!</p>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <span></span>
+                <li><a href="/about.html">About</a></li>
+                <span></span>
+                <li style="width: 80px;"><a href="" class="header_nav_current">文章详情</a></li>
+            </ul>
+        </nav>
+
+        <div class="user_area">
+            <i class="iconfont icon-xiaoxi"></i>
+            <em></em>
+            <span id="j_user_name">AloneBo</span>
+            <img src="/images/user_logo.jpeg" alt="" title="AloneBo">
+        </div>
+
+        <div class="user_menu_pop">
+            <span>三角</span>
+            <ul>
+                <li><a href="/manger.html"><em class="iconfont icon-combinedshapecopy2"></em>管理博客</a></li>
+                <li><a href="/write.html"><em class="iconfont icon-dashang"></em>写新文章</a></li>
+                <li><a href="/login.html"><em class="iconfont icon-logout"></em>登陆帐号</a></li>
+            </ul>
+
+        </div>
+    </div>
+</header>
+
+<section class="w main_content markdown-body editormd-html-preview" id="editormd-view">
+    <img src="data:image/png;base64,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" alt="" class="loading">
+</section>
+
+<footer>
+    <div class="copyright w">
+        <p class="p1"><span class="iconfont icon-heart"></span> Developed by AloneBo</p>
+        <p class="p2">Powered by Tornado</p>
+        <a>
+            <span class="iconfont icon-CN_jianshu jianshu"></span>
+        </a>
+        <a href="https://github.com/AloneBo">
+            <span class="iconfont icon-GitHub github"></span>
+        </a>
+        <a href="http://www.miitbeian.gov.cn/" style="text-align: center; display: block;">粤ICP备18123808号</a>
+    </div>
+</footer>
+
+<script type="text/art-template" id="article_content">
+    {{if data}}
+    <div class="article_content">
+        {{data.content}}
+    </div>
+    {{/if}}
+</script>
+
+
+<!--<script src="/lib/jquery/jquery-2.2.4.js"></script>-->
+<!--<script src="/lib/arttemplate/template-web.js"></script>-->
+<script src="/lib/markdown/js/jquery.min.js"></script>
+<script src="/lib/markdown/lib/marked.min.js"></script>
+<script src="/lib/markdown/lib/prettify.min.js"></script>
+
+<script src="/lib/markdown/lib/raphael.min.js"></script>
+<script src="/lib/markdown/lib/underscore.min.js"></script>
+<script src="/lib/markdown/lib/sequence-diagram.min.js"></script>
+<script src="/lib/markdown/lib/flowchart.min.js"></script>
+<script src="/lib/markdown/lib/jquery.flowchart.min.js"></script>
+
+<script src="/lib/markdown/js/editormd.min.js"></script>
+
+<script src="/js/blog.js"></script>
+</body>
+</html>

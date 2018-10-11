@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <title>Write Article</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/lib/markdown/css/editormd.css"/>
+    <link rel="stylesheet" href="/fonts/iconfont.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/write.css">
+</head>
+<body>
+<header>
+    <div class="header w">
+        <h1><a href="/index.html">AloneBo's blog</a></h1>
+        <p><em class="iconfont icon-heart" id="j_header_heart"></em>SOMEONE KNOCK AT THE DOOR!</p>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <span></span>
+                <li><a href="/about.html">About</a></li>
+                <span></span>
+                <li  style="width: 80px"><a class="header_nav_current" href="">写新文章</a></li>
+            </ul>
+        </nav>
+
+        <div class="user_area">
+            <i class="iconfont icon-xiaoxi"></i>
+            <em></em>
+            <span id="j_user_name">AloneBo</span>
+            <img src="/images/user_logo.jpeg" alt="" title="AloneBo">
+        </div>
+
+        <div class="user_menu_pop">
+            <span>三角</span>
+            <ul>
+                <li><a href="manger.html"><em class="iconfont icon-combinedshapecopy2"></em>管理博客</a></li>
+                <li><a href="/write.html"><em class="iconfont icon-dashang"></em>写新文章</a></li>
+                <li><a href="/login.html"><em class="iconfont icon-logout"></em>登陆帐号</a></li>
+            </ul>
+
+        </div>
+    </div>
+</header>
+<div class="w ">
+    <div class="article_info_box">
+         <input type="text" placeholder="Title" maxlength="20">
+    <input type="text" placeholder="Category" maxlength="10">
+    <textarea placeholder="Summary" minlength="80" maxlength="200"></textarea>
+    </div>
+
+</div>
+<div id="layout">
+    <div id="test-editormd">
+        <textarea style="display:none;"></textarea>
+    </div>
+</div>
+<div class="clearfix w">
+   <button id="submit_article" >提交</button>
+</div>
+
+<footer>
+    <div class="copyright w">
+        <p class="p1"><span class="iconfont icon-heart"></span> Developed by AloneBo</p>
+        <p class="p2">Powered by Tornado</p>
+        <a>
+            <span class="iconfont icon-CN_jianshu jianshu"></span>
+        </a>
+        <a href="https://github.com/AloneBo">
+            <span class="iconfont icon-GitHub github"></span>
+        </a>
+        <a href="http://www.miitbeian.gov.cn/" style="text-align: center; display: block;">粤ICP备18123808号</a>
+    </div>
+</footer>
+
+<script src="/lib/markdown/js/jquery.min.js"></script>
+<script src="/lib/markdown/js/editormd.min.js"></script>
+<script src="/js/write.js"></script>
+</body>
+</html>

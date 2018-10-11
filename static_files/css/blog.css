@@ -1,0 +1,51 @@
+body, html {
+    background: #eff;
+}
+
+.main_content {
+    min-height: 700px;
+    margin-top: 20px;
+}
+
+
+.main_content .editormd-toc-menu {
+    position: fixed;
+    right: 100px;
+    top: 160px;
+}
+
+
+.main_content .editormd-toc-menu .markdown-toc-list{
+    display: block !important;
+}
+
+.editormd-html-preview, .editormd-preview-container {
+    background-color: #eff;
+}
+.markdown-body h1 {
+    text-align: center;
+}
+
+.editormd-html-preview code, .editormd-html-preview kbd, .editormd-html-preview pre, .editormd-preview-container code, .editormd-preview-container kbd, .editormd-preview-container pre {
+    font-family: "Ubuntu Mono","YaHei Consolas Hybrid",Consolas,"Meiryo UI","Malgun Gothic","Segoe UI","Trebuchet MS",Helvetica,monospace,monospace;
+}
+
+.main_content .loading {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    animation: roate 1.5s infinite linear;
+}
+
+@keyframes roate {
+    0% {
+        transform: rotateZ(0)
+    }
+    100% {
+        transform: rotateZ(360deg)
+    }
+}
+
+
+

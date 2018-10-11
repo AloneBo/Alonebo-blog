@@ -1,0 +1,318 @@
+/*头部开始*/
+header {
+    color: white;
+    height: 160px;
+    background: #4a4a59;
+    /*background: url("http://ogw467yh1.bkt.clouddn.com/bg_header2.png") no-repeat center;*/
+
+}
+
+.header {
+    height: 160px;
+    position: relative;
+}
+
+header h1 a{
+    font-size: 40px;
+}
+
+header p{
+    font-size: 16px;
+    color: #666666;
+}
+
+.header .icon-heart{
+    color: #d71345;
+    font-size: 20px;
+    margin-right: 4px;
+}
+
+.header_nav ul{
+    position: absolute;
+    bottom: 0;
+}
+
+.header_nav {
+    height: 40px;
+}
+
+
+
+
+.header_nav_current {
+    color: #ccc;
+    border-bottom: 2px solid red;
+}
+
+/*固定导航开始*/
+.nav_fixed {
+    display: none;
+    position: fixed;
+    top: 0;
+    height: 40px;
+    background-color: #4a4a59;
+    z-index: 9999;
+    width: 100%;
+}
+
+
+.nav_fixed span, .header_nav span {
+    display: block;
+    height: 16px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 12px;
+    width: 2px;
+    background-color: #ffffff;
+    float: left;
+}
+
+.nav_fixed li, .header_nav li{
+    font-size: 18px;
+    /*background-color: #c81623;*/
+    text-align: center;
+    height: 40px;
+    float: left;
+    width: 60px;
+    line-height: 40px;
+
+}
+
+.write_blog {
+    line-height: 40px;
+    float: right;
+    display: none;
+}
+
+.write_blog i {
+    font-size: 16px;
+    color: #e6e6e6;
+}
+/*固定导航结束*/
+
+.user_area {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.user_area i{
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.user_area em{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: red;
+    position: absolute;
+    top: 4px;
+    /*visibility: hidden;*/
+
+}
+
+.user_area img {
+    margin-left: 10px;
+    border-radius: 50%;
+    transition: all 0.6s;
+    margin-bottom: 5px;
+    cursor: pointer;
+    width: 33px;
+    height: 33px;
+}
+
+.user_area img:hover {
+    transform: rotate(-360deg);
+}
+
+.user_area span {
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.login_area {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.login_area a{
+
+    display: block;
+    color: #fff;
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #d71345;
+    line-height: 30px;
+    border-radius: 2px;
+}
+
+.login_area a:hover {
+    background-color: #d71349;
+    color: #cccccc;
+    outline: none;
+}
+
+.user_menu_pop {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-color: #eff;
+    top: 48px;
+    right: 32px;
+    color: #16171b;
+    visibility: hidden;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    box-shadow: 1px 1px 6px 1px rgba(255,255,255,0.3);
+}
+
+.user_menu_pop a{
+    letter-spacing: 2px;
+    height: 34px;
+    display: block;
+    width: 100%;
+    line-height: 34px;
+    font-size: 16px;
+    color: #16171b;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.user_menu_pop a:hover {
+    color: #666;
+}
+
+.user_menu_pop a:hover em {
+    color: #d71345;
+}
+
+.user_menu_pop em{
+    margin-right: 4px;
+    font-size: 16px;
+}
+
+.user_menu_pop span{
+    font-size: 0;
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: #eff;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+
+}
+
+.anim_pop_in {
+    animation-name: pop_in;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+}
+
+@keyframes pop_in {
+    0% {
+        opacity: 0.0;
+    }
+
+    10% {
+        opacity: 0.1;
+    }
+
+    20% {
+        opacity: 0.2;
+    }
+
+    30% {
+        opacity: 0.3;
+    }
+
+    40% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 0.6;
+    }
+
+    70% {
+        opacity: 0.7;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*头部结束*/
+
+
+/*footer*/
+footer {
+    margin-top: 20px;
+    /*height: 100px;*/
+    background-color: #4a4a59;
+
+
+}
+footer .p1 {
+    padding-top: 10px;
+    color: #e6e6e6;
+    font-size: 20px;
+    font-weight: 800;
+
+}
+
+.copyright {
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+
+}
+
+footer .p2 {
+    color: #e6e6e6;
+    font-size: 16px;
+    font-weight: 800;
+
+}
+
+footer .github {
+    position: absolute;
+    color: #e6e6e6;
+    top: 20px;
+    right: 60px;
+    font-size: 40px;
+}
+
+footer .jianshu {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    color: #e6e6e6;
+    font-size: 40px;
+}
+
+/*footer结束*/

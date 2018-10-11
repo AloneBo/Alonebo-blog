@@ -1,0 +1,47 @@
+header {
+    background: #4a4a59;
+}
+
+body, html {
+    /*background-image: ;*/
+    width: 100%;
+    height: 100%;
+    background: #4a4a59;
+}
+
+header {
+    background: transparent;
+}
+
+.content-box {
+    margin-top: 70px;
+}
+
+.content-box h2{
+    /*opacity: 0;*/
+    color: #e5e5e5;
+    font-size: 60px;
+    text-align: center;
+    /*transition: all 1s linear;*/
+    animation-name: h2;
+    animation-duration: 3s;
+}
+
+
+@keyframes h2 {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.content-box h3{
+    text-align: center;
+    font-size: 30px;
+    color: #e5e5e5;
+     animation-name: h2;
+    animation-duration: 3s;
+}

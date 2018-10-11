@@ -1,0 +1,163 @@
+.content {
+    margin-top: 16px;
+}
+
+ul {
+    margin-bottom: 0!important;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+h1 {
+    margin-top: 0!important;
+}
+
+/*左边导航*/
+.manger_nav {
+
+    width: 180px;
+    float: left;
+    border: 1px solid #e6e6e6;
+    box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.1);
+}
+
+.manger_title {
+    height: 34px;
+    background-color: #333333;
+}
+
+.manger_title  span{
+    display: block;
+    color: #fff;
+    width: 90px;
+    height: 34px;
+    line-height: 34px;
+    background-color: #d71345;
+    font-size: 18px;
+    padding-left: 4px;
+
+}
+
+.manger_nav a{
+    display: block;
+
+    width: 100%;
+    color: #16171b;
+    font-size: 16px;
+    line-height: 24px;
+    text-indent: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.manger_nav a:hover {
+    background-color: #e6e6e6;
+    color: #d71345 !important;
+}
+
+.current_nav_title {
+
+    color: #d71345 !important;
+    background-color: #e6e6e6;
+
+
+}
+
+
+/*右边内容*/
+.manger {
+    margin-left: 20px;
+    width: 800px;
+    float: right;
+    min-height: 650px;
+}
+
+.manger h2{
+    color: #16171b;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+
+
+}
+
+.manger .modify_manger{
+
+}
+
+.article_title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 34px;
+}
+
+.article_title input{
+    display: block;
+    outline: none;
+    border: none;
+    width: 50%;
+
+    font-size: 18px;
+    margin: 0 10px;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+}
+
+.article_title input:focus {
+    border-bottom: 1px solid #d71345;
+}
+
+.summary_area {
+    margin-top: 20px;
+    width: 100%;
+
+    padding: 0 10px;
+
+}
+
+.summary_area textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 2px 6px;
+    height: 50px;
+    font-size: 14px;
+    resize: none;
+}
+
+.summary_area textarea:focus {
+
+    border: 1px solid #d71345;
+
+}
+
+.write_area {
+    margin-top: 20px;
+}
+
+
+.submit {
+    margin-top: 22px;
+
+}
+
+.submit input {
+    width: 100px;
+    float: right;
+    background-color: #16171b;
+    color: white;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+
+.submit input:hover {
+    color: #999;
+    background-color: #333333;
+}
