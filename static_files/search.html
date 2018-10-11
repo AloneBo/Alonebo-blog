@@ -2,13 +2,12 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Alonebo About</title>
+    <title>Alonebo 搜索</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="fonts/iconfont.css">
-    <link rel="stylesheet" href="/css/category.css">
-    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/fonts/iconfont.css">
+    <link rel="stylesheet" href="/css/search.css">
 </head>
 <body>
 <header>
@@ -19,18 +18,17 @@
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <span></span>
-                <li class="header_nav_current"><a href="/about.html">About</a></li>
-
-
+                <li><a href="/about.html">About</a></li>
+                <span></span>
+                <li style="width: 80px;"><a href="" class="header_nav_current">搜索博文</a></li>
             </ul>
         </nav>
 
         <div class="user_area">
-            <!--消息提示-->
             <!--<i class="iconfont icon-xiaoxi"></i>-->
             <!--<em></em>-->
             <span id="j_user_name">AloneBo</span>
-            <img src="/images/user_logo.png" alt="avatar" title="AloneBo">
+            <img src="/images/user_logo.png" alt="" title="AloneBo">
         </div>
 
         <div class="user_menu_pop">
@@ -44,11 +42,36 @@
         </div>
     </div>
 </header>
-<div class="w content-box">
-    <h2>记录学习&生活</h2>
-    <h3>Email: alonebo.zhou@gmail.com</h3>
+
+
+<div class="big-symbol">
+    <span>{</span>
+    <strong></strong>
+    <span>}</span>
 </div>
+
+<div class="w container">
+    <img src="/images/loading.png" alt="" class="loading">
+
+</div>
+<script type="text/art-template" id="category-article">
+    {{if data}}
+    {{each data item index}}
+     <div class="content-item">
+        <a class="content-item-detail" href="/blog.html#article={{item.title}}">
+
+            <p style="color: #0a001f"><em class="icon-riqi iconfont"></em>{{item.update_time}}</p>
+            <h3>{{item.title}}</h3>
+        </a>
+       <p>{{item.category}}</p>
+    </div>
+    {{/each}}
+    {{/if}}
+</script>
+
+<script src="/lib/arttemplate/template-web.js"></script>
 <script src="/lib/markdown/js/jquery.min.js"></script>
-<script src="/js/about.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/search.js"></script>
 </body>
 </html>

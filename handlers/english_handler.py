@@ -7,7 +7,6 @@ class EnglisWordCommithHandler(base_handler.BaseHandler):
     async def get(self, *args, **kwargs):
         en_word = self.get_argument("word")
         trans = googletrans.Translator(service_urls=['translate.google.cn'])
-        # print(en_word)
         def query(word):
             return trans.translate(word, dest="zh-CN")
         result = await tornado.ioloop.IOLoop.current().run_in_executor(None, query, en_word)

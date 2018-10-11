@@ -36,7 +36,7 @@ class BaseHandler(tornado.web.RequestHandler):
             return await cur.fetchall()
 
     async def set_redis(self, key, value, expire_time=60*60*24):
-        res =  await self.redisDB.execute('set', key, value)
+        res = await self.redisDB.execute('set', key, value)
         await self.redisDB.execute('expire', key, expire_time)
         return res
 

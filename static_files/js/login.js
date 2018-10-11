@@ -37,7 +37,16 @@ let initClick = function () {
         });
     });
 
+    $()
+
 }
+
+$("body").keydown(function(event) {
+    if (event.keyCode == "13") {
+        $('#j_login_button').click()
+    }
+});
+
 
 let onSubminArticleSuccess = function (data) {
     console.log("success");

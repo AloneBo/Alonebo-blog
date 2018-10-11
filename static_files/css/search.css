@@ -36,10 +36,7 @@ header {
     color: red;
 }
 
-
-
-
-.article-container {
+.container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -47,7 +44,7 @@ header {
     margin-top: 20px;
 }
 
-.article-container .loading {
+.container .loading {
     display: block;
     width: 50px;
     height: 50px;
@@ -55,7 +52,17 @@ header {
     animation: roate 1.5s infinite linear;
 }
 
-.article-container .content-item {
+@keyframes roate {
+    0% {
+        transform: rotateZ(0)
+    }
+    100% {
+        transform: rotateZ(360deg)
+    }
+}
+
+
+.container .content-item {
     background: #fff;
     width: 30%;
     height: 100px;
@@ -71,11 +78,11 @@ header {
     transition: all ease 0.8s;
 }
 
-.article-container .content-item:hover {
+.container .content-item:hover {
     transform: translateY(-5px);
 }
 
-.article-container .content-item > p {
+.container .content-item > p {
     font-size: 16px;
     color: red;
     transform: rotate(-270deg);
@@ -89,7 +96,7 @@ header {
 
 }
 
-.article-container .content-item .content-item-detail {
+.container .content-item .content-item-detail {
     height: 100%;
     width: 90%;
     display: flex;
@@ -97,13 +104,13 @@ header {
     border-right: 1px solid #e5e5e5;
 }
 
-.article-container .content-item .content-item-detail h3 {
+.container .content-item .content-item-detail h3 {
     color: #000;
     height: 60%;
     padding-top: 5%;
 }
 
-.article-container .content-item .content-item-detail p {
+.container .content-item .content-item-detail p {
     height: 40%;
     border-bottom: 1px dashed #e6e6e6;
 }

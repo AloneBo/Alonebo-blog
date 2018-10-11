@@ -133,28 +133,33 @@ let initCategoryManger = function() {
         $(".manger_category tbody .btn-danger").each(function (index) {
             $(this).on("click", function () {
                 // console.log(index)
-                let value = $(".manger_category tbody th:first-child").eq(index).html()
+                let value = $(".manger_category tbody td:first-of-type").eq(index).html()
                 console.log(value)
                 deleteCategory(value)
             })
         })
     }
 
-    function deleteCategory(id, newCategory) {
+    function deleteCategory(cate, newCategory) {
         let success = function (data) {
+            if (data.errcode == 1){
+                return console.log(data)
+            }
             console.log(data)
+            console.log("删除成功")
+           location.reload() // 删除成功 直接刷新本页面
         }
 
         let error = function (error) {
             console.log(error)
         }
-        if (!id) return console.log('id null')
+        if (!cate) return console.log('cate null')
         $.ajax({
             url: '/api/modify_category?is_delete=True',
             type: 'POST',
             dataType: 'json',
             data: JSON.stringify({
-                category_id: id,
+                category: cate,
             }),
             headers: {
                 "Cache-Control": "no-cache",
@@ -170,7 +175,7 @@ let initCategoryManger = function() {
         console.log(err)
     }
     $.ajax({
-        url: '/api/get_category?row_data=True',
+        url: '/api/get_category',
         dataType: 'json',
         success: success,
         error: error

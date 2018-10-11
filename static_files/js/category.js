@@ -53,7 +53,6 @@ let initHashIndex = function (name, hasValue) {
 
         }
     }
-
 }
 
 let initView = function () {

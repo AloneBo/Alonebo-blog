@@ -32,7 +32,7 @@ class Application(tornado.web.Application):
         self.redisDB = redisdb
         handlers = config.handlers
         settings = config.settings
-        super(Application, self).__init__(handlers, **settings)
+        super().__init__(handlers, **settings)
 
 
 async def start():

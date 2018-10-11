@@ -28,8 +28,8 @@
         </nav>
 
         <div class="user_area">
-            <i class="iconfont icon-xiaoxi"></i>
-            <em></em>
+            <!--<i class="iconfont icon-xiaoxi"></i>-->
+            <!--<em></em>-->
             <span id="j_user_name">AloneBo</span>
             <img src="/images/user_logo.jpeg" alt="" title="AloneBo">
         </div>
@@ -62,9 +62,8 @@
             <li><a href="/manger.html#view=manger_category">文章分类</a></li>
             <li class="manger_title"><span>账户管理</span></li>
             <li><a href="/manger.html#view=modify_password">更改密码</a></li>
-            <li><a href="/manger.html#view=modify_avatar">更改头像</a></li>
             <li class="manger_title"><span>其它更改</span></li>
-            <li><a href="/manger.html#view=modify_title">更改标语</a></li>
+            <li><a href="/manger.html#view=">xxx</a></li>
         </ul>
     </aside>
 </div>
@@ -87,7 +86,7 @@
 <script id="modify_article" type="text/art-template">
     {{if data}}
     <table class="table table-hover table-condensed modify_manger">
-        <caption style="font-size: 24px; color: #0f0f0f">文章修改</caption>
+        <caption style="font-size: 24px; color: #0f0f0f">文章删改</caption>
         <thead>
         <tr>
             <th>数据库id</th>
@@ -116,10 +115,10 @@
 <script id="manger_category" type="text/art-template">
     {{if data}}
     <table class="table table-hover table-condensed manger_category">
-        <caption style="font-size: 24px; color: #0f0f0f">分类修改</caption>
+        <caption style="font-size: 24px; color: #0f0f0f">分类删改</caption>
         <thead>
         <tr>
-            <th>数据库id</th>
+            <th>索引</th>
             <th>索引文章数目</th>
             <th class="text-center">分类名称</th>
             <th class="text-right " style="padding-right: 40px">动作</th>
@@ -128,7 +127,7 @@
         <tbody>
         <% for(var i = 0; i < data.length; i++) {%>
         <tr>
-            <th scope="row" style="vertical-align: middle">{{data[i].category_id}}</th>
+            <th scope="row" style="vertical-align: middle">{{i}}</th>
             <th scope="" style="vertical-align: middle">{{data[i].category_count}}</th>
             <td class="text-center" style="vertical-align: middle; font-size: 14px">{{data[i].category_title}}</td>
             <td>

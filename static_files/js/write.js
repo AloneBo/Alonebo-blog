@@ -54,7 +54,7 @@ let initModifyArticleData = function(isModifyArticle, articleID) {
 
         $summary.val(data.summary)
         $category.val(data.cate)
-        $mdArea.text(data.content_src)
+        $mdArea.text(data.content)
     }
     let error = function(data) {
         console.log(data)
@@ -116,14 +116,14 @@ let initSubmitEvent = function (ele, testEditor, isModify, articleID) {
 
         let title = $('.article_info_box input:nth-child(1)').val()
         title = title.trim()
-        let content = testEditor.getHTML()
-        let contentSrc = testEditor.getMarkdown()
+        let content = testEditor.getMarkdown()
+        // testEditor.getMarkdown()
         let summary = $('.article_info_box textarea:nth-child(3)').val()
 
         let category = $('.article_info_box input:nth-child(2)').val()
         category = category.trim()
-        if (title && content && contentSrc && category && summary)  {
-            submitArticle(title, content, contentSrc, summary, category, success, error, isModify, articleID)
+        if (title && content && category && summary)  {
+            submitArticle(title, content, summary, category, success, error, isModify, articleID)
         } else {
             alert('请确保参数都填写了！')
         }
@@ -131,7 +131,7 @@ let initSubmitEvent = function (ele, testEditor, isModify, articleID) {
     })
 }
 
-let submitArticle = function(title, content, contentSrc, summary, category, onSubmitArticleSuccess, onSubmitArticleError, isModify, articleID) {
+let submitArticle = function(title, content, summary, category, onSubmitArticleSuccess, onSubmitArticleError, isModify, articleID) {
 
     $.ajax({
         url: "/api/article_commit",
@@ -142,7 +142,6 @@ let submitArticle = function(title, content, contentSrc, summary, category, onSu
         data: JSON.stringify({
             'title': title,
             'content': content,
-            'content_src': contentSrc,
             'summary': summary,
             'category': category,
             'is_modify': isModify,

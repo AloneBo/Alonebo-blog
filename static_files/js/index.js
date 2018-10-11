@@ -1,23 +1,39 @@
 window.onload = function () {
     initValue()
-    initView()
     initNav()
     initRecentPosts()
     initLastChangeTime()
     initCategoryNav()
     initIndexNav()
-    checkLogin()
     getArticles()
     test()
 
+    initSearch()
+}
 
-};
 
- // window.addEventListener('load', function (event) {
- //        console.log('heihie')
- //        document.querySelector('header').style.background = 'url("http://ogw467yh1.bkt.clouddn.com/bg_header2.png") no-repeat center'
- //        // $('header').style("background", "url(\"http://ogw467yh1.bkt.clouddn.com/bg_header2.png\") no-repeat center;")
- // })
+let initSearch = function() {
+    $('.search button').on('click', function () {
+        let key = $('.search input').val()
+        console.log('click', key)
+        location.href = '/search.html#keyword='+key
+    })
+    $('.search input').focus(function () {
+        $('body').bind('keydown', function (event) {
+            if (event.keyCode == "13") {
+                console.log('click')
+                $('.search button').click()
+            }
+        })
+    })
+
+    $('.search input').blur(function () {
+        $('body').unbind('keydown')
+    })
+
+
+
+}
 
 let initValue = function(){
     window.CURRENT_INDEX = 1
@@ -31,7 +47,6 @@ let initHashIndex = function () {
     let hash = location.hash
     hash = decodeURI(hash)
     hash = hash.substr(1)
-
     if (hash.startsWith('index=')) {
         let tmp = hash.substr(hash.indexOf('=') + 1)
         tmp = parseInt(tmp) || 1
@@ -84,7 +99,6 @@ let initIndexNavData = function (callback) {
         dataType: 'json',
         success: function (data) {
             let article_count = parseInt(data.article_count)
-
             data = {"article_count": Math.ceil(article_count / SINGLE_PAGE_SIZE), "current_index": CURRENT_INDEX}
             let html = template("page_index", {"data": data})
             $('.page_index>ul').html(html)
@@ -152,105 +166,6 @@ let initRecentPosts = function () {
     })
 }
 
-let initView = function () {
-    let SHOW_USER_AREA_POP = true;
-    document.getElementById("j_user_name").onclick = function (event) {
-        if (SHOW_USER_AREA_POP) {
-            document.getElementsByClassName("user_menu_pop")[0].style.visibility = "visible";
-            document.getElementsByClassName("user_menu_pop")[0].className = "user_menu_pop anim_pop_in";
-            SHOW_USER_AREA_POP = false;
-            // window.event.stopPropagation();
-            event.stopPropagation();
-
-        } else {
-            document.getElementsByClassName("user_menu_pop")[0].style.visibility = "hidden";
-            document.getElementsByClassName("user_menu_pop")[0].className = "user_menu_pop";
-            SHOW_USER_AREA_POP = true;
-            // window.event.stopPropagation();
-            event.stopPropagation();
-        }
-
-    };
-    document.getElementById("j_user_name").onmouseout = function () {
-        console.log("ha");
-    };
-    window.onclick = function (event) {
-        if (SHOW_USER_AREA_POP === false) {
-            document.getElementsByClassName("user_menu_pop")[0].style.visibility = "hidden";
-            document.getElementsByClassName("user_menu_pop")[0].className = "user_menu_pop";
-            SHOW_USER_AREA_POP = true;
-            // window.event.stopPropagation();
-            event.stopPropagation();
-        }
-    };
-
-
-    (function () {
-        let flag = false;
-        let heart = document.getElementById("j_header_heart");
-        let id = setInterval(function () {
-            if (flag) {
-                heart.style.visibility = "hidden";
-                heart.className = "iconfont icon-heart"
-                flag = false;
-            } else {
-                heart.style.visibility = "visible";
-                heart.className = "iconfont icon-heart anim_pop_in";
-                flag = true;
-            }
-
-        }, 1400);
-        heart.onclick = function () {
-            clearInterval(id);
-            console.log("clear");
-        };
-    })();
-}
-
-let checkLogin = function () {
-    let val = $("#j_login").text();
-    console.log(val);
-    if (val == "退出登陆") {
-        $("#j_login").on("click", function () {
-            $.ajax({
-                url: "/api/exit_login",
-                type: "get",
-                dataType: 'json',
-                success: function (data) {
-                    console.log("登陆成功：" + data.errcode);
-                    location.href = "login.html"
-                },
-                error: function () {
-                    console.log("退出失败");
-                    location.href = "login.html"
-                },
-            });
-
-            return false;
-        });
-    }
-    $.ajax({
-        url: "/api/check_login",
-        type: "get",
-        dataType: 'json',
-        success: function (data) {
-            console.log("ok" + data.errcode);
-            if (0 === data.errcode) {
-                $(".user_menu_pop a").eq(2).html('<em class="iconfont icon-logout"></em>退出登陆');
-                $(".user_area").show();
-                $(".login_area").hide();
-                $(".write_blog").show();
-            } else {
-                $(".user_menu_pop a").eq(2).html('<em class="iconfont icon-logout"></em>登陆帐号');
-                $(".user_area").hide();
-                $(".login_area").show();
-                $(".write_blog").hide();
-            }
-        }
-    });
-
-}
-
 let initNav = function () {
     //获取页面向上或者向左卷曲出去的距离的值
     function getScroll() {
@@ -283,10 +198,7 @@ let getArticles = function () {
         type: "get",
         dataType: 'json',
     }).then(function (result) {
-        console.log("article")
-        console.dir(result)
         if (result) {
-            console.log('ok')
             renderArticles(result)
         }
     })
