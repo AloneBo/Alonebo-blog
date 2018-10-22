@@ -1,5 +1,5 @@
-venv
-test
-nginx_conf
+venv/
+test/
+nginx_conf/
 utils/qiniu_utils.py
-.git
+.git/

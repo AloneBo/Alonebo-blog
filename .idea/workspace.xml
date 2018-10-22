@@ -62,7 +62,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="44" />
-          <entry key="gitignore" value="26" />
+          <entry key="gitignore" value="36" />
           <entry key="html" value="356" />
           <entry key="js" value="557" />
           <entry key="md" value="205" />
@@ -75,7 +75,7 @@
           <entry key="HTML" value="356" />
           <entry key="JavaScript" value="557" />
           <entry key="Markdown" value="205" />
-          <entry key="PLAIN_TEXT" value="70" />
+          <entry key="PLAIN_TEXT" value="80" />
           <entry key="Python" value="1680" />
           <entry key="SQL" value="264" />
         </counts>
@@ -230,8 +230,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+            <state relative-caret-position="76">
+              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -376,9 +376,9 @@
         <option value="$PROJECT_DIR$/schema.sql" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/utils/qiniu_utils_PUBLIC.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -687,7 +687,7 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.3292683" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="13" visible="true" weight="0.20953436" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" visible="true" weight="0.4855876" />
       <window_info anchor="bottom" id="Python Console" order="14" weight="0.20731707" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1061,8 +1061,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        <state relative-caret-position="76">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
