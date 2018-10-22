@@ -62,7 +62,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="44" />
-          <entry key="gitignore" value="36" />
+          <entry key="gitignore" value="41" />
           <entry key="html" value="356" />
           <entry key="js" value="557" />
           <entry key="md" value="205" />
@@ -75,7 +75,7 @@
           <entry key="HTML" value="356" />
           <entry key="JavaScript" value="557" />
           <entry key="Markdown" value="205" />
-          <entry key="PLAIN_TEXT" value="80" />
+          <entry key="PLAIN_TEXT" value="85" />
           <entry key="Python" value="1680" />
           <entry key="SQL" value="264" />
         </counts>
@@ -231,7 +231,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
-              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+              <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -430,31 +430,6 @@
             <path>
               <item name="MyBlog" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyBlog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="handlers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="nginx_conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="static_files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MyBlog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MyBlog" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1062,7 +1037,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -3,3 +3,5 @@ test/
 nginx_conf/
 utils/qiniu_utils.py
 .git/
+.idea/
+__pycache__/
