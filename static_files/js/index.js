@@ -15,13 +15,13 @@ window.onload = function () {
 let initSearch = function() {
     $('.search button').on('click', function () {
         let key = $('.search input').val()
-        console.log('click', key)
+
         location.href = '/search.html#keyword='+key
     })
     $('.search input').focus(function () {
         $('body').bind('keydown', function (event) {
             if (event.keyCode == "13") {
-                console.log('click')
+
                 $('.search button').click()
             }
         })
@@ -51,7 +51,7 @@ let initHashIndex = function () {
         let tmp = hash.substr(hash.indexOf('=') + 1)
         tmp = parseInt(tmp) || 1
         CURRENT_INDEX = tmp
-        console.log("tmp:"+tmp)
+
     }
 }
 
@@ -64,12 +64,12 @@ let initIndexNav = function () {
 
             if (index == "0") { // 上一页
                 CURRENT_INDEX--;
-                console.log("上一页")
+
                 location.href = "/index.html#index="+CURRENT_INDEX;
                 flushArticle()
             } else if (index == "-1") { // 下一页
                  CURRENT_INDEX++;
-                console.log("下一页")
+
                 location.href = "/index.html#index="+CURRENT_INDEX;
                 flushArticle()
             } else {
@@ -102,8 +102,7 @@ let initIndexNavData = function (callback) {
             data = {"article_count": Math.ceil(article_count / SINGLE_PAGE_SIZE), "current_index": CURRENT_INDEX}
             let html = template("page_index", {"data": data})
             $('.page_index>ul').html(html)
-            console.log("page_index:")
-            console.log(data)
+
             callback ? callback() : "";
         },
         error: function (error) {
@@ -120,8 +119,7 @@ let initCategoryNav = function () {
         success: function (data) {
             let html = template("category", {"data": data})
             $('.categories>ul').append(html)
-            console.log("category:")
-            console.log(data)
+
         },
         error: function (error) {
             console.log(error)
@@ -150,8 +148,6 @@ let initRecentPosts = function () {
         type: 'get',
         dataType: 'json',
         success: function (result) {
-            console.log(result)
-            //给每一个元素设置月 和 日
             for (let i in result) {
                 let data = result[i].create_time
                 result[i].month = data.substring(5, 7);
@@ -182,7 +178,6 @@ let initNav = function () {
         let result = getScroll();
 
         if (result.top > (header.offsetHeight - fixed_nav.offsetHeight)) {
-
             //fixed_nav.style.display="block";
             $("#fixed_nav").slideDown(400);
         } else {

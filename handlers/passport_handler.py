@@ -9,13 +9,15 @@ class LoginHandler(base_handler.BaseHandler):
         user_name = self.json_args.get("user_name")
         user_passwd = self.json_args.get("user_passwd")
         print(user_name)
-
         if not user_name or not user_passwd:
-            return self.write_error(constant.LOGIN_ERROR)
-
-        res = await self.query_sql("select id, u_name, u_passwd from tb_user where u_name=%s", user_name)
-        print(res)
-        print("*" * 20)
+            return self.write({"errcode": 0, "errmsg": "参数缺失"})
+        try:
+            res = await self.query_sql("select id, u_name, u_passwd from tb_user where u_name=%s", user_name)
+            print(res)
+            print("*" * 20)
+        except Exception as e:
+            print("***error***", e)
+            return self.write({"errmsg": "查询数据库失败", "errcode": 1})
         if res:
             res = await self.query_sql("select id, u_name, u_passwd from tb_user where u_passwd=%s", user_passwd)
             if res:
@@ -28,8 +30,7 @@ class LoginHandler(base_handler.BaseHandler):
                 return self.write(constant.LOGIN_SUCCESS)
         else:
             self.write(constant.LOGIN_ERROR)
-            self.set_status(constant.LOGIN_ERROR_CODE)
-            return
+            return self.write({"errmsg": "查询数据库失败", "errcode": 1})
 
 
 class CheckLogin(base_handler.BaseHandler):

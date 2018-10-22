@@ -1,0 +1,21 @@
+version: '3'
+services:
+  myblog:
+    build: .
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+    command: "supervisord -c /usr/src/app/supervisord_conf/supervisord.conf"
+  redis:
+    image: "redis"
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: alonebo
+      POSTGRES_DB: alonebo_blog
+

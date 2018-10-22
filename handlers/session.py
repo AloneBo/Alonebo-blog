@@ -35,9 +35,9 @@ class Session(object):
     async def save(self, user_data):
         """保存用户状态"""
         if self.__is_login:  # 存在session
-            print("已经登陆过了")
+            print("has login")
         else:
-            print("没有登陆，设置redis")
+            print("not login")
             self.__request_handler.set_secure_cookie(constant.SESSION_ID, self.__session_id)
             await self.__request_handler.set_redis(self.__session_id, json.dumps(user_data))
 

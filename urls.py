@@ -21,6 +21,7 @@ handlers = [
     (r'^/api/markdown_file_commit$', file_commit_handler.MarkdownImageFileHandler),  # md格式上传 博文
     (r'^/api/english_word_commit$', english_handler.EnglisWordCommithHandler),  # 英语单词提交
     (r'^/api/english_word_push$', english_handler.EnglishWordPushHandler),  # 获取英语单词列表
+    (r'^/api/search_article', article_push_handler.ArticleSearch),  # 查询博客
     # 静态文件配置 实际部署使用nginx
     (r'^/()$', web.StaticFileHandler, {"path": os.path.join(os.path.dirname(__file__), "static_files"), \
                                        "default_filename": "index.html"}),

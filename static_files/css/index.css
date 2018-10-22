@@ -237,7 +237,7 @@ header {
 }
 
 
-.last_change_time .icon-combinedshapecopy2 {
+.last_change_time .icon-write {
     font-size: 20px;
     padding-right: 8px;
     color: #d71345;
@@ -310,7 +310,7 @@ header {
     color: #333;
 }
 
-.icon-riqi {
+.icon-date {
     color: #333;
     font-size: 14px;
     padding: 3px;
@@ -411,8 +411,7 @@ header {
     display: block;
     color: #666;
     padding: 5px 0;
-    font-size: 14px;
-
+    font-size: 16px;
 }
 
 .english_note a:hover {

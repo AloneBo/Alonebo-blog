@@ -105,10 +105,12 @@ class GetRecentPosts(base_handler.BaseHandler):
     """
     async def get(self, *args, **kwargs):
         try:
+            # import asyncio 模拟休眠
+            # await asyncio.sleep(10)
             res = await self.query_sql(
                 "select id, at_title, at_update_time, at_cate from tb_article order by at_update_time desc")
             return_value = {}
-            print(res)
+            # print(res)
             loop_value = len(res)
             if len(res) > 8:
                 loop_value = 8
@@ -160,9 +162,7 @@ class GetCategory(base_handler.BaseHandler):
     """
     获取所有类别的项目
     """
-
     async def get(self, *args, **kwargs):
-
         try:
             result = await self.query_sql(
                 "select count(*),at_cate from tb_article group by at_cate")
@@ -183,7 +183,6 @@ class GetArticlesInfo(base_handler.BaseHandler):
     """
     获取博客 根据page_index 返回的数据只有博文的id和title
     """
-
     async def get(self, *args, **kwargs):
         page_index = self.get_argument('page_index', "")
         if page_index != "":
@@ -239,5 +238,16 @@ class GetArticleByCategory(base_handler.BaseHandler):
 
 class ArticleSearch(base_handler.BaseHandler):
     async def get(self, *args, **kwargs):
-
-        pass
+        keyword = self.get_argument('keyword', None)
+        if keyword:
+            print(keyword)
+            res = await self.query_sql("select id, at_create_time,at_title from tb_article where at_title like %s or at_content like %s or at_summary like %s",
+                                       "%"+keyword+"%", "%"+keyword+"%", "%"+keyword+"%")
+            # print(res)
+            return_value = {}
+            for i in range(len(res)):
+                row = res[i]
+                return_value[str(i)] = {'id': row[0], 'update_time': str(row[1]), 'title': row[2]}
+            self.write(return_value)
+        else:
+            self.write({'errcode': 1, 'errmsg': '参数错误'})

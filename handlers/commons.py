@@ -9,7 +9,7 @@ def require_login(fun):
         session_ = session.Session(request_handler_obj)
         await session_.init()
         if not session_.is_login:
-            request_handler_obj.write(dict(errmsg="用户未登录"))
+            request_handler_obj.write(dict(errmsg="用户未登录", errcode=0))
         else:
             await fun(request_handler_obj, *args, **kwargs)
     return wrapper

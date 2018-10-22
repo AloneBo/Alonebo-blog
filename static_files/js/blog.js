@@ -3,23 +3,26 @@ $(function () {
     initTOCM()
 })
 
-let initData = function (success) {
+let initData = function () {
     var hash = location.hash
     hash = decodeURI(hash)
     hash = hash.substr(1)
-    console.log(hash)
     let articleName = ""
     if (hash.startsWith('article=')) {
         articleName = hash.substr(hash.indexOf('=') + 1)
         articleName = articleName.trim()
-        console.log(articleName)
     }
-    console.log('url: ' + "/api/get_article?article=" + articleName,)
+    document.title = "AloneBo " + articleName
+
     $.ajax({
         url: "/api/get_article?article=" + articleName,
         type: "get",
         dataType: 'json',
     }).then(result => {
+        if ($.isEmptyObject(result)) {
+            result = {'0': {'content': "<h3 style='color: red'>404 not found!</h3>"}}
+        }
+
         renderArticle(result[0])
     }, (err) => {
         console.log(err)

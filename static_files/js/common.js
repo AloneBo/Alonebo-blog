@@ -7,7 +7,6 @@ $(function () {
 
 var checkLogin = function () {
     let val = $("#j_login").text();
-    console.log(val);
     if (val == "退出登陆") {
         $("#j_login").on("click", function () {
             $.ajax({
@@ -33,15 +32,19 @@ var checkLogin = function () {
         dataType: 'json',
         success: function (data) {
             if (0 === data.errcode) {
-                $(".user_menu_pop a").eq(2).html('<em class="iconfont icon-logout"></em>退出登陆');
+                $(".user_menu_pop a").eq(2).html('<em class="iconfont icon-exit"></em>退出登陆');
                 $(".user_area").show();
                 $(".login_area").hide();
                 $(".write_blog").show();
             } else {
-                $(".user_menu_pop a").eq(2).html('<em class="iconfont icon-logout"></em>登陆帐号');
-                $(".user_area").hide();
-                $(".login_area").show();
-                $(".write_blog").hide();
+                // $(".user_menu_pop a").eq(2).html('<em class="iconfont icon-exit"></em>登陆帐号');
+                // $(".user_area").hide();
+                // $(".login_area").show();
+                // $(".write_blog").hide();
+                console.log('tttt')
+                $(".login_area").hide();
+                $(".user_area").show();
+                $(".user_menu_pop").hide()
             }
         }
     });
@@ -66,9 +69,7 @@ var initView = function () {
         }
 
     };
-    document.getElementById("j_user_name").onmouseout = function () {
-        console.log("ha");
-    };
+
     window.onclick = function (event) {
         if (SHOW_USER_AREA_POP === false) {
             document.getElementsByClassName("user_menu_pop")[0].style.visibility = "hidden";

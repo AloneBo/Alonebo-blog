@@ -1,15 +1,14 @@
 import urls
-import os
 handlers = urls.handlers
 
 settings = dict(
     debug=True,
-    cookie_secret='YBf4Uh22Syii/bCbfo3vSQ5XPKUs5EAngmNU3kesnbU=',
+    cookie_secret='YOUR_KEY',
     xsrf_cookies=True
 )
 
 postgreSetttings = dict(
-    host="0.0.0.0",
+    host="localhost",
     port=5432,
     user="postgres",
     password="alonebo",

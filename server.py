@@ -43,9 +43,7 @@ async def start():
         app = Application(portgres_db, redis_db)
         app.listen(options.port)
         shutdown_event = tornado.locks.Event()
-
         await shutdown_event.wait()
-
 
 if __name__ == '__main__':
     tornado.ioloop.IOLoop.current().run_sync(start)

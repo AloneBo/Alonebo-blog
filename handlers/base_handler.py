@@ -22,13 +22,12 @@ class BaseHandler(tornado.web.RequestHandler):
     def redisDB(self):
         return self.application.redisDB
 
-    async def execute_sql(self, stmt, *args):
+    async def execute_sql(self, stmt, *args) -> "cur":
         with(await self.postgreDB.cursor()) as cur:
             await cur.execute(stmt, args)
-
             return cur
 
-    async def query_sql(self, stmt, *args):
+    async def query_sql(self, stmt, *args) -> list:
         with(await self.postgreDB.cursor()) as cur:
             await cur.execute(stmt, args)
             # async for row in cur:

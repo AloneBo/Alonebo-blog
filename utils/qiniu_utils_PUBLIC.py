@@ -5,10 +5,10 @@ import logging
 from qiniu import Auth, put_data
 
 
-# 需要填写你的 Access Key 和 Secret Key
-access_key = '3Q5gpimnj9sM7Muma-zQZ2S1FK5sTRI740l7Z7zZ'
-secret_key = 'yU0gfym9Gq3GDPIiaLEa3zQS1ZXDa6w4Q9B4_IeE'
-domain = "http://file.alonebo.top"
+# 需要填写你的 Access Key 和 Secret Key 以及domain
+access_key = ''
+secret_key = ''
+domain = ""
 
 
 def save_file_to_qiniu(file_name, file_data):
