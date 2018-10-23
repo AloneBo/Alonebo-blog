@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+data = {{data_category}}
+{{each data_category item index}}
+<li><a href="/category.html#category={{item.category_title}}">{{item.category_title}} [<span>{{item.category_count}}</span>]</a></li>
+{{/each}}
+
+</body>
+</html>

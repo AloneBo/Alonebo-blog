@@ -5,3 +5,4 @@ utils/qiniu_utils.py
 .git/
 .idea/
 __pycache__/
+node_modules/
