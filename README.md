@@ -1,26 +1,18 @@
-## Blog with tornado
+# Alonebo' blog
 
-手动部署
 
-```shell
-$ apt install redis
-$ apt install postgresql
-$ su
-# passwd postgres
-# exit
-$ su postgres
-$ psql
-postgres=# alter user "postgres" with password 'alonebo';
-```
+## How to run
 
-使用Docker部署
+use docker
 
-安装Docker以及Docker-compose
 ```
 docker-compose up
 ```
 
-将会部署到主机的三个端口`8000`、`8001`、`8002`
+open `http://localhost:8000` in your chrome. The other way is to run your manual installation environment.
 
 ![demo01](https://github.com/AloneBo/Alonebo-blog/blob/master/blogdemo01.png)
+
+## License
+GPL
 
