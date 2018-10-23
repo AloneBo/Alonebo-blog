@@ -25,6 +25,11 @@ python3 server.py -port=8000
 ```
 
 ![demo01](https://github.com/AloneBo/Alonebo-blog/blob/master/blogdemo01.png)
+![demo01](https://github.com/AloneBo/Alonebo-blog/blob/master/blogdemo02.png)
+![demo01](https://github.com/AloneBo/Alonebo-blog/blob/master/blogdemo03.png)
+![demo01](https://github.com/AloneBo/Alonebo-blog/blob/master/blogdemo04.png)
+![demo01](https://github.com/AloneBo/Alonebo-blog/blob/master/blogdemo05.png)
+![demo01](https://github.com/AloneBo/Alonebo-blog/blob/master/blogdemo06.png)
 
 ## License
 
