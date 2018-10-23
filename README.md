@@ -22,5 +22,5 @@ docker-compose up
 
 将会部署到主机的三个端口`8000`、`8001`、`8002`
 
-[demo01](https://github.com/AloneBo/Alonebo-blog/blob/master/blogdemo01.png)
+![demo01](https://github.com/AloneBo/Alonebo-blog/blob/master/blogdemo01.png)
 
