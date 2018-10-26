@@ -2,31 +2,35 @@ $(function () {
     getXSRF()
     let articleID = initHashIndex("modify_article", true)
     let isModifyArticle = parseInt(articleID) > 0 ? true : false
-    initModifyArticleData(isModifyArticle, articleID)
-    var testEditor = editormd("test-editormd", {
-        width: "80%",
-        height: 740,
-        saveHTMLToTextarea: true,
-        emoji: true,
-        path: "/lib/markdown/lib/",
-        htmlDecode: "style,script,iframe",
-        tocm: true,
-        syncScrolling: true,
-        taskList: true,
-        tex: true,
-        flowChart: true,
-        sequenceDiagram: true,
-        toc: true,
-        tocStartLevel: 2,
-        imageUpload: true,
-        imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-        imageUploadURL: "/api/markdown_file_commit?_xsrf="+getCookie('_xsrf'),
-    });
 
-    console.log(articleID)
-    initModifyArticleView(isModifyArticle)
-    console.log(isModifyArticle)
-    initSubmitEvent("#submit_article", testEditor, isModifyArticle, articleID)
+    
+	initModifyArticleData(isModifyArticle, articleID, function(data) {
+    	var testEditor = editormd("test-editormd", {
+	        width: "80%",
+	        height: 740,
+	        saveHTMLToTextarea: true,
+	        emoji: true,
+	        markdown: data,
+	        path: "/lib/markdown/lib/",
+	        htmlDecode: "style,script,iframe",
+	        tocm: true,
+	        syncScrolling: true,
+	        taskList: true,
+	        tex: true,
+	        flowChart: true,
+	        sequenceDiagram: true,
+	        toc: true,
+	        tocStartLevel: 2,
+	        imageUpload: true,
+	        imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+	        imageUploadURL: "/api/markdown_file_commit?_xsrf="+getCookie('_xsrf'),
+    	});
+    	console.log(articleID)
+	    initModifyArticleView(isModifyArticle)
+	    console.log(isModifyArticle)
+	    initSubmitEvent("#submit_article", testEditor, isModifyArticle, articleID)
+    })
+  
 
 });
 
@@ -35,7 +39,7 @@ window.addEventListener('load', function (event) {
     document.querySelector('header').style.background = 'url("/images/bg_header.jpeg") no-repeat center'
 })
 
-let initModifyArticleData = function(isModifyArticle, articleID) {
+let initModifyArticleData = function(isModifyArticle, articleID, callback) {
     if(!isModifyArticle && !articleID) {
         return console.log('initModifyArticleData参数警告：'+isModifyArticle+', '+articleID)
     }
@@ -52,10 +56,12 @@ let initModifyArticleData = function(isModifyArticle, articleID) {
 
         $summary.val(data.summary)
         $category.val(data.cate)
-        $mdArea.text(data.content)
+        // $mdArea.text(data.content)
+        callback(data.content)
     }
     let error = function(data) {
         console.log(data)
+        callback("error")
     }
     $.ajax({
         url: '/api/get_article?article_id='+articleID,
