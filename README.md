@@ -6,7 +6,7 @@ https://alonebo.top
 
 ## How to run
 
-Use docker， you can run it easily.
+Use docker， you can run it easily. Note: You must modify the config.py file.
 
 ```
 docker-compose up

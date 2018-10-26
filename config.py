@@ -8,7 +8,7 @@ settings = dict(
 )
 
 postgreSetttings = dict(
-    host="localhost",
+    host="localhost",  # if you run in docker, replace to postgres
     port=5432,
     user="postgres",
     password="alonebo",
@@ -17,6 +17,6 @@ postgreSetttings = dict(
 
 SINGLE_PAGE_SIZE = 6
 
-REDIS_HOST = "localhost"
+REDIS_HOST = "localhost" # if you run in docker, replace to redis
 
 port = 8888
